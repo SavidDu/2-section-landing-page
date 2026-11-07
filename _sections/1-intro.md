@@ -1,7 +1,7 @@
 ---
 # Images live in the images/ folder. Swap the files, or change these names.
-background: images/section-1-background.jpg
-image: images/section-1-image.jpg
+background: images/test-background-1.png
+image: images/test-image-1.png
 image_alt: Describe the main image here, for screen readers
 # Which side the main image sits on: left or right
 image_side: left

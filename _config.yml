@@ -1,0 +1,21 @@
+# ------------------------------------------------------------
+# Site settings — edit these, then commit.
+# ------------------------------------------------------------
+
+# Shown in the browser tab and in search results.
+title: Your Name
+description: A short one-line description of you or your business.
+
+# How dark the shading over each background image is,
+# from 0 (none) to 1 (black). Raise it if text is hard to read.
+overlay: 0.45
+
+# ------------------------------------------------------------
+# You shouldn't need to change anything below this line.
+# ------------------------------------------------------------
+collections:
+  sections:
+    output: false
+
+exclude:
+  - README.md

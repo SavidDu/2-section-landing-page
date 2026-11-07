@@ -1,0 +1,32 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>:root { --overlay: {{ site.overlay | default: 0.45 }}; }</style>
+</head>
+<body>
+{% assign sections = site.sections | sort: "path" %}
+{% for section in sections %}
+  <section class="panel image-{{ section.image_side | default: 'right' }}"
+           {% if section.background %}style="background-image: url('{{ section.background }}');"{% endif %}>
+    <div class="panel__inner">
+      {% if section.image %}
+      <figure class="panel__image">
+        <img src="{{ section.image }}" alt="{{ section.image_alt | escape }}">
+      </figure>
+      {% endif %}
+      <div class="panel__text">
+        {{ section.content | markdownify }}
+      </div>
+    </div>
+  </section>
+{% endfor %}
+</body>
+</html>

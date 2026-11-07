@@ -1,0 +1,148 @@
+/* ------------------------------------------------------------
+   Colours, fonts and sizes — change these to restyle the page.
+   ------------------------------------------------------------ */
+:root {
+  --text: #ffffff;
+  --text-soft: rgba(255, 255, 255, 0.82);
+  --link: #ffd9a8;
+  --heading-font: Georgia, "Times New Roman", serif;
+  --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Height of each section as a share of the screen.
+     50vh = two sections fill exactly one screen. */
+  --section-height: 50vh;
+
+  /* Height of the main image as a share of the screen. */
+  --image-height: 36vh;
+
+  /* Widest the content gets on very large screens. */
+  --max-width: 1000px;
+}
+
+/* ------------------------------------------------------------ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  /* Text scales with screen height: ~16px on a 1080p monitor,
+     never smaller than 14px or larger than 18px. */
+  font-size: clamp(14px, 1.65vh, 18px);
+}
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--body-font);
+  line-height: 1.55;
+  color: var(--text);
+  background: #1d2328;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Each section takes half the screen, with its own background image. */
+.panel {
+  position: relative;
+  min-height: var(--section-height);
+  display: flex;
+  align-items: center;
+  padding: 4vh 5vw;
+  background-color: #2a3238;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark shading over the background so the text stays readable. */
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--overlay, 0.45));
+}
+
+.panel__inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+/* Image on the right (default): text first, image second. */
+.image-right .panel__text  { order: 1; }
+.image-right .panel__image { order: 2; }
+
+/* Image on the left: image first, text second. */
+.image-left .panel__image { order: 1; }
+.image-left .panel__text  { order: 2; }
+
+.panel__image {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.panel__image img {
+  display: block;
+  height: var(--image-height);
+  width: auto;
+  max-width: 42vw;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.panel__text {
+  flex: 1 1 0;
+  max-width: 32rem;
+}
+
+/* Text styling */
+.panel__text h1,
+.panel__text h2,
+.panel__text h3 {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 0.6em;
+}
+.panel__text h1 { font-size: clamp(1.8rem, 5vh, 3.25rem); }
+.panel__text h2 { font-size: clamp(1.5rem, 4vh, 2.6rem); }
+.panel__text h3 { font-size: 1.25rem; }
+
+.panel__text p { margin: 0 0 0.85em; color: var(--text-soft); }
+.panel__text p:last-child { margin-bottom: 0; }
+.panel__text strong { color: var(--text); font-weight: 600; }
+
+.panel__text a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.panel__text a:hover { text-decoration-thickness: 2px; }
+
+/* Phones: stack the image above the text, and let each section
+   be as tall as it needs. */
+@media (max-width: 700px) {
+  html { font-size: 16px; }
+  .panel {
+    min-height: 0;
+    padding: 2.5rem 1.25rem;
+  }
+  .panel__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+  .panel .panel__image { order: 1; align-self: center; }
+  .panel .panel__text  { order: 2; max-width: none; }
+  .panel__image img {
+    height: auto;
+    max-height: 32vh;
+    max-width: 100%;
+  }
+  .panel__text h1 { font-size: 2rem; }
+  .panel__text h2 { font-size: 1.7rem; }
+}

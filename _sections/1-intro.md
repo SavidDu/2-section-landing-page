@@ -4,7 +4,7 @@ background: images/section-1-background.jpg
 image: images/section-1-image.jpg
 image_alt: Describe the main image here, for screen readers
 # Which side the main image sits on: left or right
-image_side: right
+image_side: left
 ---
 
 # Your Name

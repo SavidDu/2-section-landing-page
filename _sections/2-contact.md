@@ -1,6 +1,6 @@
 ---
-background: images/section-2-background.jpg
-image: images/section-2-image.jpg
+background: images/test-background-2.png
+image: images/test-image-2.png
 image_alt: Describe the main image here, for screen readers
 image_side: left
 ---

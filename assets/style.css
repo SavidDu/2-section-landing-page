@@ -13,7 +13,7 @@
   --section-height: 50vh;
 
   /* Height of the main image as a share of the screen. */
-  --image-height: 36vh;
+  --image-height: 32vh;
 
   /* Widest the content gets on very large screens. */
   --max-width: 1000px;

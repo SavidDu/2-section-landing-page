@@ -167,3 +167,21 @@ body {
     padding: 1.25rem;
   }
 }
+/* ------------------------------------------------------------
+   Background image on its own layer so it can be faded
+   ------------------------------------------------------------ */
+.panel {
+  isolation: isolate;
+  background-color: #1d2328;   /* colour that shows through the faded image */
+}
+
+.panel__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;                /* image opacity: 0 = invisible, 1 = full */
+}
+
+.panel::before { z-index: -1; } /* keep the shading above the image */

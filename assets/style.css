@@ -146,3 +146,22 @@ body {
   .panel__text h1 { font-size: 2rem; }
   .panel__text h2 { font-size: 1.7rem; }
 }
+/* ------------------------------------------------------------
+   Soft background behind the text and main image
+   ------------------------------------------------------------ */
+.panel__inner {
+  width: fit-content;
+  padding: clamp(1rem, 2.5vh, 2rem) clamp(1.25rem, 3vw, 2.5rem);
+  background: rgba(0, 0, 0, 0.35);           /* darkness: 0 = none, 1 = black */
+  -webkit-backdrop-filter: blur(6px);         /* frosted-glass blur */
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;                        /* corner roundness */
+}
+
+@media (max-width: 700px) {
+  .panel__inner {
+    width: 100%;
+    padding: 1.25rem;
+  }
+}

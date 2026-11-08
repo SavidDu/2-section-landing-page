@@ -181,7 +181,7 @@ body {
   z-index: -2;
   background-size: cover;
   background-position: center;
-  opacity: 0.8;                /* image opacity: 0 = invisible, 1 = full */
+  opacity: 0.2;                /* image opacity: 0 = invisible, 1 = full */
 }
 
 .panel::before { z-index: -1; } /* keep the shading above the image */

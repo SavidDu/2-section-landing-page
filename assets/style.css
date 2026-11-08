@@ -152,9 +152,11 @@ body {
 .panel__inner {
   width: fit-content;
   padding: clamp(1rem, 2.5vh, 2rem) clamp(1.25rem, 3vw, 2.5rem);
-  background: rgba(0, 0, 0, 0.35);           /* darkness: 0 = none, 1 = black */
-  -webkit-backdrop-filter: blur(6px);         /* frosted-glass blur */
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.45);           /* darkness: 0 = none, 1 = black */
+   /* 0.35 */
+  -webkit-backdrop-filter: blur(7px);         /* frosted-glass blur */
+  backdrop-filter: blur(7px);
+   /* both blur 6px originally */
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;                        /* corner roundness */
 }

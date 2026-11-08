@@ -14,8 +14,8 @@ layout: null
 <body>
 {% assign sections = site.sections | sort: "path" %}
 {% for section in sections %}
-  <section class="panel image-{{ section.image_side | default: 'right' }}"
-           {% if section.background %}style="background-image: url('{{ section.background }}');"{% endif %}>
+  <section class="panel image-{{ section.image_side | default: 'right' }}">
+    {% if section.background %}<div class="panel__bg" style="background-image: url('{{ section.background }}');"></div>{% endif %}
     <div class="panel__inner">
       {% if section.image %}
       <figure class="panel__image">

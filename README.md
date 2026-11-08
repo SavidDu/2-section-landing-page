@@ -7,8 +7,8 @@ background image, a main image on one side, and text on the other.
 
 ```
 _config.yml              Site title, description, background shading
-_sections/1-intro.md     Text + image settings for the first section
-_sections/2-contact.md   Text + image settings for the second (contact) section
+_sections/1-business.md     Text + image settings for the first section
+_sections/2-business.md   Text + image settings for the second (contact) section
 images/                  All your pictures
 assets/style.css         Colours, fonts, spacing (optional to touch)
 index.html               Page structure (you shouldn't need to edit this)
@@ -49,7 +49,7 @@ At the top of `assets/style.css`:
 
 ```css
 --section-height: 50vh;  /* 50vh = both sections fit on one screen */
---image-height: 36vh;    /* main image height, as a share of the screen */
+--image-height: 32vh;    /* main image height, as a share of the screen */
 ```
 
 `vh` means "percent of the screen height", so everything scales with the
